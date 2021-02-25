@@ -14,30 +14,31 @@
       var losses = 0;
       var ties = 0;
 
-      var userChoice = prompt("Enter r, p, or s!");
-      console.log("User Choice: ", userChoice);
+      for (var i = 0; i < 10; i++) {
+        var userChoice = prompt("Enter r, p, or s!");
+        console.log("User Choice: ", userChoice);
 
-      var availableChoices = ["r", "p", "s"];
-      var randomIndex = Math.floor(Math.random() * 3);
-      console.log("Random Index: ", randomIndex);
+        var availableChoices = ["r", "p", "s"];
+        var randomIndex = Math.floor(Math.random() * 3);
+        console.log("Random Index: ", randomIndex);
 
-      var computerChoice = availableChoices[randomIndex];
-      console.log("Computer Choice: ", computerChoice);
+        var computerChoice = availableChoices[randomIndex];
+        console.log("Computer Choice: ", computerChoice);
 
-      if (userChoice === computerChoice) {
-        ties++;
-        alert("You have tied! You currently have " + ties + " ties.");
-      } else if (
-        (userChoice === "r" && computerChoice === "s") ||
-        (userChoice === "p" && computerChoice === "r") ||
-        (userChoice === "s" && computerChoice === "p")
-      ) {
-        wins++;
-        alert("You Won! You currently have " + wins + " wins.");
-      }
-      else{
-          losses ++;
+        if (userChoice === computerChoice) {
+          ties++;
+          alert("You have tied! You currently have " + ties + " ties.");
+        } else if (
+          (userChoice === "r" && computerChoice === "s") ||
+          (userChoice === "p" && computerChoice === "r") ||
+          (userChoice === "s" && computerChoice === "p")
+        ) {
+          wins++;
+          alert("You Won! You currently have " + wins + " wins.");
+        } else {
+          losses++;
           alert("You lost. YOu currently have: " + losses + " losses.");
+        }
       }
     </script>
   </body>
