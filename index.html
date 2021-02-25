@@ -16,11 +16,20 @@
             var ties = 0;
 
             var userChoice = prompt("Enter r, p, or s!");
+            console.log("User Choice: ", userChoice);   
+
             var availableChoices = ["r", "p", "s"];
-            var randomIndex = Math.floor(Math*random * 3);
+            var randomIndex = Math.floor(Math.random() * 3);
+            console.log("Random Index: ", randomIndex)
 
-            var computerChoice = availableChoices(randomIndex);
 
+            var computerChoice = availableChoices[randomIndex];
+            console.log("Computer Choice: ", computerChoice);
+            
+            if(userChoice === computerChoice) {
+                ties++;
+                alert("You have tied! You currently have " + ties + " ties.");
+            }
         </script>
     </body>
 </html>
