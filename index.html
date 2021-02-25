@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Play Here</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
- 
-        <script>
-            var wins = 0;
-            var losses = 0;
-            var ties = 0;
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Play Here</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <script>
+      var wins = 0;
+      var losses = 0;
+      var ties = 0;
 
-            var userChoice = prompt("Enter r, p, or s!");
-            console.log("User Choice: ", userChoice);   
+      var userChoice = prompt("Enter r, p, or s!");
+      console.log("User Choice: ", userChoice);
 
-            var availableChoices = ["r", "p", "s"];
-            var randomIndex = Math.floor(Math.random() * 3);
-            console.log("Random Index: ", randomIndex)
+      var availableChoices = ["r", "p", "s"];
+      var randomIndex = Math.floor(Math.random() * 3);
+      console.log("Random Index: ", randomIndex);
 
+      var computerChoice = availableChoices[randomIndex];
+      console.log("Computer Choice: ", computerChoice);
 
-            var computerChoice = availableChoices[randomIndex];
-            console.log("Computer Choice: ", computerChoice);
-            
-            if(userChoice === computerChoice) {
-                ties++;
-                alert("You have tied! You currently have " + ties + " ties.");
-            }else if(userChoice === "r" && computerChoice === "s"){
-                wins++
-                alert("You Won! You currently have " + wins + " wins.");
-            }
-        </script>
-    </body>
+      if (userChoice === computerChoice) {
+        ties++;
+        alert("You have tied! You currently have " + ties + " ties.");
+      } else if (
+        (userChoice === "r" && computerChoice === "s") ||
+        (userChoice === "p" && computerChoice === "r") ||
+        (userChoice === "s" && computerChoice === "p")
+      ) {
+        wins++;
+        alert("You Won! You currently have " + wins + " wins.");
+      }
+    </script>
+  </body>
 </html>
